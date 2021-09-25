@@ -6,36 +6,33 @@ namespace JurosSimples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
+            double c, tj, t, j, m;
+            
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("=== Juros Simples ===");
-            Console.WriteLine();
-            Console.Write("Digite o Capital: ");
+            Console.WriteLine("\n====== Juros Simples ======\n");
             Console.ResetColor();
-            string capitalDigitado = Console.ReadLine();
-            double capital = Convert.ToDouble(capitalDigitado);
-            Console.WriteLine();
+
+            Console.WriteLine("Insira o capital inicial, a\ntaxa de juros e o tempo da");
+            Console.WriteLine("aplicação em meses, para\ncalcular Juros Simples\n");
+
+            Console.Write("Capital.........: ");
+            c = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Taxa de Juros...: ");
+            tj = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Tempo em meses..: ");
+            t = Convert.ToDouble(Console.ReadLine());
+
+            j = c * (tj / 100) * t;
+
+            m = c + j;
+
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write("Digite a Taxa de Juros: ");
+            Console.WriteLine("\n=== Juros e Montante ===\n");
             Console.ResetColor();
-            string taxaDigitado = Console.ReadLine();
-            double taxa = Convert.ToDouble(taxaDigitado);
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write("Digite o Tempo em meses: ");
-            Console.ResetColor();
-            string tempoDigitado = Console.ReadLine();
-            double tempo = Convert.ToDouble(tempoDigitado);
-            double juros = capital * (taxa / 100) * tempo;
-            double montante = capital + juros;
-            Console.WriteLine();
-            Console.WriteLine($"Capital........: {capital:C}");
-            Console.WriteLine($"Taxa de juros..: {taxa}%");
-            Console.WriteLine($"Tempo..........: {tempo} meses");
-            Console.WriteLine();
-            Console.WriteLine($"Juros..........: {juros:C}");
-            Console.WriteLine($"Montante.......: {montante:C}");
-            Console.WriteLine();
+
+            Console.WriteLine($"Juros...........: {j:C}\nMontante........: {m:C}\n");
         }
     }
 }
